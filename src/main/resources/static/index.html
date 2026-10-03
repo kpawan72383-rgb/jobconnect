@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JobConnect – Online Job Board</title>
+<meta name="description" content="JobConnect – Find your dream job or hire top talent. Online Job Board and Recruitment Platform.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<!-- Top header bar -->
+<header id="topbar">
+  <a class="logo" href="#" onclick="go('jobs');return false"><i class="fas fa-briefcase"></i> JobConnect</a>
+  <div id="header-right">
+    <div id="notif-bell" style="display:none">
+      <button class="icon-btn" onclick="toggleNotifPanel()" title="Notifications"><i class="fas fa-bell"></i><span id="notif-badge" class="badge" style="display:none">0</span></button>
+      <div id="notif-panel" class="dropdown-panel" style="display:none"></div>
+    </div>
+    <div id="who"></div>
+  </div>
+</header>
+<!-- Layout: sidebar + main -->
+<div id="app-layout">
+  <aside id="sidebar" style="display:none"><nav id="sidebar-nav"></nav></aside>
+  <main id="main"><div class="loader" id="global-loader"><div class="spinner"></div></div></main>
+</div>
+<!-- Toast -->
+<div id="toast" role="status" aria-live="polite"></div>
+<!-- Modal -->
+<div id="modal-overlay" style="display:none" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <h3 id="modal-title"></h3>
+    <p id="modal-msg"></p>
+    <div class="modal-btns">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-danger" id="modal-confirm">Confirm</button>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body></html>
